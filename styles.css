@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px; /* Base padding */
+    margin: 0; /* Remove default margin */
+}
+
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 0 15px; /* Padding for smaller screens */
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* Service Card Styles */
+.service-card {
+    margin: 10px 0; /* Space between cards */
+    padding: 15px; /* Touch-target friendly padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Minimum size for better visibility */
+    gap: 15px; /* Space between items */
+    padding: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f7fafc; /* Light gray */
+    padding: 20px; /* Increased padding for better spacing */
+    color: #1a202c; /* Dark text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#contact h2 {
+    font-weight: 800;
+    font-size: 2rem; /* Base size for larger screens */
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+/* Input and Textarea Styles */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 0.75rem; /* Comfortable padding */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 0 0 1px transparent;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact input[type="text"]:focus,
+#contact input[type="email"]:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #5D5CDE;
+    box-shadow: 0 0 0 3px rgba(93, 92, 222, 0.2);
+}
+
+/* Button Styles */
+#contact button[type="submit"] {
+    width: 100%;
+    background-color: #5a67d8; /* Primary color */
+    color: white;
+    padding: 0.75rem; /* Increased padding for better touch targets */
+    font-weight: 600;
+    border-radius: 4px; /* Rounded corners */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+#contact button[type="submit"]:hover {
+    background-color: #434190; /* Darker shade on hover */
+}
+
+/* Modal Animations */
+#booking-confirmation, #contact-confirmation {
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+    body {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .service-card {
+        padding: 10px; /* Adjust padding */
+    }
+
+    #contact h2 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    #contact {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Responsive grid for contact */
+@media (min-width: 768px) {
+    #contact > div > div.mt-10 > div.grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        padding: 20px; /* More padding on larger screens */
+    }
+
+    .service-card {
+        padding: 20px; /* Increase padding for larger screens */
+    }
+
+    #contact h2 {
+        font-size: 2.5rem; /* Larger heading for desktop */
+    }
+}
+
+/* Dark Mode Styles */
+.dark body {
+    background-color: #181818;
+    color: #f7fafc;
+}
+
+.dark #contact {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+.dark #contact h2 {
+    color: #fff;
+}
+
+.dark #contact p {
+    color: #a0aec0;
+}
+
+/* Additional Styles */
+label {
+    display: block;
+    margin: 5px 0;
+}
+
+select, input[type="radio"] {
+    margin: 5px 0;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.block {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#booking-confirmation {
+    background-color: #f8d5ec; /* Baby pink/purplish */
+    background-blend-mode: multiply;
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
+
+#booking-confirmation .modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+#booking-form {
+    background-color: #e1d3ec; /* Baby purple shade */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Info section text and icons */
+#contact .text-base {
+    font-size: 1rem;
+}
+
+#contact svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #5a67d8;
+}
+
+/* Opening hours grid */
+#contact .grid.grid-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    color: #4a5568;
+}
+
+.dark #contact .grid.grid-cols-2 {
+    color: #a0aec0;
+}
