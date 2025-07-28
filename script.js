@@ -30,7 +30,12 @@ mobileLinks.forEach(link => {
 const generateGalleryImages = () => {
     const galleryContainer = document.getElementById('gallery-placeholder');
     const images = [
+        { src: 'Photos/curly1.jpg', alt: 'Modern knotless braids ' },
+        { src: 'Photos/longt3.jpg ', alt: 'Modern knotless braids ' },
+        { src: 'Photos/longk1.jpg', alt: 'Modern knotless braids ' },
         { src: 'Photos/straight-back.jpeg', alt: 'Modern Straight Back' },
+        { src: 'Photos/curly4.jpg', alt: 'Modern knotless braids ' },
+        { src: 'Photos/longt1.mp4', alt: 'Modern  Back' },
         { src: 'Photos/lemonade1.jpeg', alt: 'Long Lemonade Style' },
         { src: 'Photos/short-lemonade.jpeg', alt: 'Elegant Short Lemonade hairstyle' },
         { src: 'Photos/shhort-knotless.jpeg', alt: 'Short Knotless Braids' },
