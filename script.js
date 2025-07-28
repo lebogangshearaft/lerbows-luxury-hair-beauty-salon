@@ -27,90 +27,87 @@ mobileLinks.forEach(link => {
 });
 
 // Generate gallery images
-const generateGalleryImages = () => {
-    const galleryContainer = document.getElementById('gallery-placeholder');
-    const images = [
-        { src: 'Pictures/straight back.jpeg', alt: 'Modern Straight Back' },
-        { src: 'Pictures/lemonade1.jpeg', alt: 'Long Lemonade Style' },
-        { src: 'Pictures/short lemonade.jpeg', alt: 'Elegant Short Lemonade hairstyle' },
-        { src: 'Pictures/shhort knotless.jpeg', alt: 'Short Knotless Braids' },
-        { src: 'Pictures/knotless.jpeg', alt: 'Long Knotless Braids' },
-        { src: 'Pictures/straight up1.jpeg', alt: 'Elegant Modern Straight Up' },
-        { src: 'Pictures/straight up2.jpeg', alt: 'Straight up style' },
-        { src: 'Pictures/tribal.jpeg', alt: 'Tribal Modern Braids' },
-        { src: 'Pictures/up.jpeg', alt: 'Straight UP' },
-        { src: 'Pictures/Twist.jpeg', alt: 'Twist' },
-        { src: 'Pictures/free hand.jpg', alt: 'Free Hand' },
-        { src: 'Pictures/installation.jpg', alt: 'Weave Installation' },
-        { src: 'Pictures/castomized.jpeg', alt: 'Weave Customization' },
-        { src: 'Pictures/new pictures/butterfly lock.jpg', alt: 'Butterfly Locks' },
-        { src: 'Pictures/new pictures/curlyTribal1.jpg', alt: 'Curly tribals' },
-        { src: 'Pictures/new pictures/curlyTribal2.jpg', alt: 'Elegant curly Tribals' },
-        { src: 'Pictures/new pictures/curlyTribal3.jpg', alt: 'Morden Curly Tribal' },
-        { src: 'Pictures/new pictures/curlyUp.jpg', alt: 'Straight up with curly tail' },
-        { src: 'Pictures/new pictures/Installation1.jpeg', alt: 'installation' },
-        { src: 'Pictures/new pictures/Installation2.jpeg', alt: 'insatllation' },
-        { src: 'Pictures/new pictures/Installation3.jpeg', alt: 'insatllation' },
-        { src: 'Pictures/new pictures/knotlessss.jpg', alt: 'knotless  Braids ' },
-        { src: 'Pictures/new pictures/Make up1.jpg', alt: 'Make up' },
-        { src: 'Pictures/new pictures/Make up2.jpg', alt: 'make up' },
-        { src: 'Pictures/new pictures/Make up3.jpg', alt: 'Make up' },
-        { src: 'Pictures/new pictures/Make up4.jpg', alt: 'make  up' },
-        { src: 'Pictures/new pictures/straight back1.jpg', alt: 'Straighht back ' },
-        { src: 'Pictures/new pictures/tribal1.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal2.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal3.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal4.jpg', alt: 'Morden Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal5.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal6.jpg', alt: 'Morden Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal7.jpg', alt: 'Morden Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal8.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/tribal9.jpg', alt: 'Tribal Braids' },
-        { src: 'Pictures/new pictures/up1.jpeg', alt: 'straigh up' },
-        { src: 'Pictures/new pictures/up2.jpeg', alt: 'straight up ' },
-        { src: 'Pictures/new pictures/twist2.jpg', alt: 'Elagent Twist' },
-        { src: 'Pictures/new pictures/Godess.mp4', alt: 'Goddess Braids', type: 'video/mp4' },
-        { src: 'Pictures/new pictures/goddess2.mp4', alt: 'Elegant Goddess Braids', type: 'video/mp4' },
-        { src: 'Pictures/new pictures/installlll.jpg', alt: 'install' },
-        { src: 'Pictures/new pictures/installlll2.jpg', alt: 'install' },
-        { src: 'Pictures/new pictures/installlll3.jpg', alt: 'installation' },
-        { src: 'Pictures/new pictures/side.jpg', alt: 'straight side ' },
-        { src: 'Pictures/new pictures/trib.jpg', alt: 'tribal' },
-        { src: 'Pictures/new pictures/uppp.jpg', alt: 'straight up' },
-        { src: 'Pictures/new pictures/tribal1.mp4', alt: 'tribal Braids', type: 'video/mp4' },
-        { src: 'Pictures/new pictures/tribal2.mp4', alt: 'tribal Braids', type: 'video/mp4' },
-    ];
-
-    galleryContainer.innerHTML = '';
-
-    images.forEach((item) => {
-        const itemElement = document.createElement('div');
-        itemElement.className = 'rounded-lg overflow-hidden shadow-md aspect-square transition-all hover:shadow-lg cursor-pointer';
-
-        if (item.type === 'video/mp4') {
-            const videoElement = document.createElement('video');
-            videoElement.src = item.src;
-            videoElement.alt = item.alt;
-            videoElement.className = 'w-full h-full object-cover';
-            videoElement.autoplay = true;
-            videoElement.loop = true;
-            videoElement.muted = true;
-            itemElement.appendChild(videoElement);
-        } else {
-            const imgElement = document.createElement('img');
-            imgElement.src = item.src;
-            imgElement.alt = item.alt;
-            imgElement.className = 'w-full h-full object-cover';
-            imgElement.addEventListener('click', () => {
-                document.getElementById('lightbox-image').src = item.src;
-                document.getElementById('lightbox').style.display = 'flex';
+        const generateGalleryImages = () => {
+            const galleryContainer = document.getElementById('gallery-placeholder');
+            const images = [
+                { src: 'Photos/straight back.jpeg', alt: 'Modern Straight Back' },
+                { src: 'Photos/lemonade1.jpeg', alt: 'Long Lemonade Style' },
+                { src: 'Photos/short lemonade.jpeg', alt: 'Elegant Short Lemonade hairstyle' },
+                { src: 'Photos/shhort knotless.jpeg', alt: 'Short Knotless Braids' },
+                { src: 'Photos/knotless.jpeg', alt: 'Long Knotless Braids' },
+                { src: 'Photos/straight up1.jpeg', alt: 'Elegant Modern Straight Up' },
+                { src: 'Photos/straight up2.jpeg', alt: 'Straight up style' },
+                { src: 'Photos/tribal.jpeg', alt: 'Tribal Modern Braids' },
+                { src: 'Photos/up.jpeg', alt: 'Straight UP' },
+                { src: 'Photos/Twist.jpeg', alt: 'Twist' },
+                { src: 'Photos/free hand.jpg', alt: 'Free Hand' },
+                { src: 'Photos/installation.jpg', alt: 'Weave Installation' },
+                { src: 'Photos/castomized.jpeg', alt: 'Weave Customization' },
+                { src: 'Photos/butterfly lock.jpg', alt: 'Butterfly Locks' },
+                { src: 'Photos/curlyTribal1.jpg', alt: 'Curly tribals' },
+                { src: 'Photos/curlyTribal2.jpg', alt: 'Elegant curly Tribals' },
+                { src: 'Photos/curlyTribal3.jpg', alt: 'Morden Curly Tribal' },
+                { src: 'Photos/curlyUp.jpg', alt: 'Straight up with curly tail' },
+                { src: 'Photos/Installation1.jpeg', alt: 'installation' },
+                { src: 'Photos/Installation2.jpeg', alt: 'insatllation' },
+                { src: 'Photos/Installation3.jpeg', alt: 'insatllation' },
+                { src: 'Photos/knotlessss.jpg', alt: 'knotless  Braids ' },
+                { src: 'Photos/Make up1.jpg', alt: 'Make up' },
+                { src: 'Photos/Make up2.jpg', alt: 'make up' },
+                { src: 'Photos/Make up3.jpg', alt: 'Make up' },
+                { src: 'Photos/Make up4.jpg', alt: 'make  up' },
+                { src: 'Photos/straight back1.jpg', alt: 'Straighht back ' },
+                { src: 'Photos/tribal1.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/tribal2.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/tribal3.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/tribal4.jpg', alt: 'Morden Tribal Braids' },
+                { src: 'Photos/tribal5.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/tribal6.jpg', alt: 'Morden Tribal Braids' },
+                { src: 'Photos/tribal7.jpg', alt: 'Morden Tribal Braids' },
+                { src: 'Photos/tribal8.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/tribal9.jpg', alt: 'Tribal Braids' },
+                { src: 'Photos/up1.jpeg', alt: 'straigh up' },
+                { src: 'Photos/up2.jpeg', alt: 'straight up ' },
+                { src: 'Photos/twist2.jpg', alt: 'Elagent Twist' },
+                { src: 'Photos/Godess.mp4', alt: 'Goddess Braids', type: 'video/mp4' },
+                { src: 'Photos/goddess2.mp4', alt: 'Elegant Goddess Braids', type: 'video/mp4' },
+                { src: 'Photos/installlll.jpg', alt: 'install' },
+                { src: 'Photos/installlll2.jpg', alt: 'install' },
+                { src: 'Photos/installlll3.jpg', alt: 'installation' },
+                { src: 'Photos/side.jpg', alt: 'straight side ' },
+                { src: 'Photos/trib.jpg', alt: 'tribal' },
+                { src: 'Photos/uppp.jpg', alt: 'straight up' },
+                { src: 'Photos/tribal1.mp4', alt: 'tribal Braids', type: 'video/mp4' },
+                { src: 'Photos/tribal2.mp4', alt: 'tribal Braids', type: 'video/mp4' },
+                { src: 'Photos/wash.mp4', alt: 'Hair Wash', type: 'video/mp4' }
+            ];
+            galleryContainer.innerHTML = '';
+            images.forEach((item) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'rounded-lg overflow-hidden shadow-md aspect-square transition-all hover:shadow-lg cursor-pointer';
+                if (item.type === 'video/mp4') {
+                    const videoElement = document.createElement('video');
+                    videoElement.src = item.src;
+                    videoElement.alt = item.alt;
+                    videoElement.className = 'w-full h-full object-cover';
+                    videoElement.autoplay = true;
+                    videoElement.loop = true;
+                    videoElement.muted = true;
+                    itemElement.appendChild(videoElement);
+                } else {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = item.src;
+                    imgElement.alt = item.alt;
+                    imgElement.className = 'w-full h-full object-cover';
+                    imgElement.addEventListener('click', () => {
+                        document.getElementById('lightbox-image').src = item.src;
+                        document.getElementById('lightbox').style.display = 'flex';
+                    });
+                    itemElement.appendChild(imgElement);
+                }
+                galleryContainer.appendChild(itemElement);
             });
-            itemElement.appendChild(imgElement);
-        }
-
-        galleryContainer.appendChild(itemElement);
-    });
-};
+        };
 
 // Close lightbox
 document.getElementById('lightbox').addEventListener('click', () => {
