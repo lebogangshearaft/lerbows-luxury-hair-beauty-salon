@@ -13,7 +13,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
 // Mobile menu toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
-
 mobileMenuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
@@ -30,12 +29,12 @@ mobileLinks.forEach(link => {
 const generateGalleryImages = () => {
     const galleryContainer = document.getElementById('gallery-placeholder');
     const images = [
-        { src: 'Photos/curly1.jpg', alt: 'Modern knotless braids ' },
-        { src: 'Photos/longt3.jpg ', alt: 'Modern knotless braids ' },
-        { src: 'Photos/longk1.jpg', alt: 'Modern knotless braids ' },
+        { src: 'Photos/curly1.jpg', alt: 'Modern knotless braids' },
+        { src: 'Photos/longt3.jpg', alt: 'Modern knotless braids' },
+        { src: 'Photos/longk1.jpg', alt: 'Modern knotless braids' },
         { src: 'Photos/straight-back.jpeg', alt: 'Modern Straight Back' },
-        { src: 'Photos/curly4.jpg', alt: 'Modern knotless braids ' },
-        { src: 'Photos/longt1.mp4', alt: 'Modern  Back' },
+        { src: 'Photos/curly4.jpg', alt: 'Modern knotless braids' },
+        { src: 'Photos/longt1.mp4', alt: 'Modern Back', type: 'video/mp4' },
         { src: 'Photos/lemonade1.jpeg', alt: 'Long Lemonade Style' },
         { src: 'Photos/short-lemonade.jpeg', alt: 'Elegant Short Lemonade hairstyle' },
         { src: 'Photos/shhort-knotless.jpeg', alt: 'Short Knotless Braids' },
@@ -51,45 +50,47 @@ const generateGalleryImages = () => {
         { src: 'Photos/butterfly-lock.jpg', alt: 'Butterfly Locks' },
         { src: 'Photos/curlyTribal1.jpg', alt: 'Curly tribals' },
         { src: 'Photos/curlyTribal2.jpg', alt: 'Elegant curly Tribals' },
-        { src: 'Photos/curlyTribal3.jpg', alt: 'Morden Curly Tribal' },
+        { src: 'Photos/curlyTribal3.jpg', alt: 'Modern Curly Tribal' },
         { src: 'Photos/curlyUp.jpg', alt: 'Straight up with curly tail' },
         { src: 'Photos/Installation1.jpeg', alt: 'installation' },
-        { src: 'Photos/Installation2.jpeg', alt: 'insatllation' },
-        { src: 'Photos/Installation3.jpeg', alt: 'insatllation' },
-        { src: 'Photos/knotlessss.jpg', alt: 'knotless  Braids ' },
+        { src: 'Photos/Installation2.jpeg', alt: 'installation' },
+        { src: 'Photos/Installation3.jpeg', alt: 'installation' },
+        { src: 'Photos/knotlessss.jpg', alt: 'knotless Braids' },
         { src: 'Photos/Make-up1.jpg', alt: 'Make up' },
         { src: 'Photos/Make-up2.jpg', alt: 'make up' },
         { src: 'Photos/Make-up3.jpg', alt: 'Make up' },
-        { src: 'Photos/Make-up4.jpg', alt: 'make  up' },
-        { src: 'Photos/straight-back1.jpg', alt: 'Straighht back ' },
+        { src: 'Photos/Make-up4.jpg', alt: 'make up' },
+        { src: 'Photos/straight-back1.jpg', alt: 'Straight back' },
         { src: 'Photos/tribal1.jpg', alt: 'Tribal Braids' },
         { src: 'Photos/tribal2.jpg', alt: 'Tribal Braids' },
         { src: 'Photos/tribal3.jpg', alt: 'Tribal Braids' },
-        { src: 'Photos/tribal4.jpg', alt: 'Morden Tribal Braids' },
+        { src: 'Photos/tribal4.jpg', alt: 'Modern Tribal Braids' },
         { src: 'Photos/tribal5.jpg', alt: 'Tribal Braids' },
-        { src: 'Photos/tribal6.jpg', alt: 'Morden Tribal Braids' },
-        { src: 'Photos/tribal7.jpg', alt: 'Morden Tribal Braids' },
+        { src: 'Photos/tribal6.jpg', alt: 'Modern Tribal Braids' },
+        { src: 'Photos/tribal7.jpg', alt: 'Modern Tribal Braids' },
         { src: 'Photos/tribal8.jpg', alt: 'Tribal Braids' },
         { src: 'Photos/tribal9.jpg', alt: 'Tribal Braids' },
-        { src: 'Photos/up1.jpeg', alt: 'straigh up' },
-        { src: 'Photos/up2.jpeg', alt: 'straight up ' },
-        { src: 'Photos/twist2.jpg', alt: 'Elagent Twist' },
+        { src: 'Photos/up1.jpeg', alt: 'straight up' },
+        { src: 'Photos/up2.jpeg', alt: 'straight up' },
+        { src: 'Photos/twist2.jpg', alt: 'Elegant Twist' },
         { src: 'Photos/Godess.mp4', alt: 'Goddess Braids', type: 'video/mp4' },
         { src: 'Photos/goddess2.mp4', alt: 'Elegant Goddess Braids', type: 'video/mp4' },
         { src: 'Photos/installlll.jpg', alt: 'install' },
         { src: 'Photos/installlll2.jpg', alt: 'install' },
         { src: 'Photos/installlll3.jpg', alt: 'installation' },
-        { src: 'Photos/side.jpg', alt: 'straight side ' },
+        { src: 'Photos/side.jpg', alt: 'straight side' },
         { src: 'Photos/trib.jpg', alt: 'tribal' },
         { src: 'Photos/uppp.jpg', alt: 'straight up' },
         { src: 'Photos/tribal1.mp4', alt: 'tribal Braids', type: 'video/mp4' },
         { src: 'Photos/tribal2.mp4', alt: 'tribal Braids', type: 'video/mp4' },
         { src: 'Photos/wash.mp4', alt: 'Hair Wash', type: 'video/mp4' }
     ];
+
     galleryContainer.innerHTML = '';
     images.forEach((item) => {
         const itemElement = document.createElement('div');
-        itemElement.className = 'rounded-lg overflow-hidden shadow-md aspect-square transition-all hover:shadow-lg cursor-pointer';
+        itemElement.className = 'rounded-lg overflow-hidden shadow-md aspect-square transition-all hover:shadow-lg';
+
         if (item.type === 'video/mp4') {
             const videoElement = document.createElement('video');
             videoElement.src = item.src;
@@ -97,19 +98,35 @@ const generateGalleryImages = () => {
             videoElement.className = 'w-full h-full object-cover';
             videoElement.autoplay = true;
             videoElement.loop = true;
-            videoElement.muted = true;
+            videoElement.muted = true;           // Muted
+            videoElement.playsInline = true;     //  Required for iOS
+            videoElement.preload = 'metadata';   // Better performance
+            // No controls = no way to unmute via UI
+            // videoElement.controls = false;   // Explicitly disabled (default)
+
+            // Disable right-click context menu (prevents "Unmute")
+            videoElement.addEventListener('contextmenu', (e) => e.preventDefault());
+
+            //  Extra security: re-mute if someone enables sound via JS
+            videoElement.addEventListener('volumechange', () => {
+                if (videoElement.muted === false) {
+                    videoElement.muted = true;
+                }
+            });
+
             itemElement.appendChild(videoElement);
         } else {
             const imgElement = document.createElement('img');
             imgElement.src = item.src;
             imgElement.alt = item.alt;
-            imgElement.className = 'w-full h-full object-cover';
+            imgElement.className = 'w-full h-full object-cover cursor-pointer';
             imgElement.addEventListener('click', () => {
                 document.getElementById('lightbox-image').src = item.src;
                 document.getElementById('lightbox').style.display = 'flex';
             });
             itemElement.appendChild(imgElement);
         }
+
         galleryContainer.appendChild(itemElement);
     });
 };
@@ -132,6 +149,7 @@ bookingForm.addEventListener('submit', (e) => {
     bookingConfirmation.classList.remove('hidden');
     bookingForm.reset();
 });
+
 closeBookingModal.addEventListener('click', () => {
     bookingConfirmation.classList.add('hidden');
 });
@@ -146,6 +164,7 @@ contactForm.addEventListener('submit', (e) => {
     contactConfirmation.classList.remove('hidden');
     contactForm.reset();
 });
+
 closeContactModal.addEventListener('click', () => {
     contactConfirmation.classList.add('hidden');
 });
@@ -170,105 +189,108 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//  Dynamic Booking Options Based on Service
+// Dynamic Booking Options Based on Service
 document.addEventListener("DOMContentLoaded", function () {
     const serviceSelect = document.getElementById("service");
     const serviceOptionsDiv = document.getElementById("service-options");
+
+    // Fix: Removed duplicate "hairwash" and incorrect "weave" value
+    serviceSelect.innerHTML = `
+        <option value="">Select a service</option>
+        <option value="braiding">Braiding</option>
+        <option value="weaveinstallation">Weave Installation</option>
+        <option value="makeup">Makeup</option>
+        <option value="weavecustomization">Weave Customization</option>
+        <option value="hairwash">Hair Wash</option>
+        <option value="eyelashes">Eye Lashes</option>
+    `;
 
     serviceSelect.addEventListener("change", function () {
         const selected = this.value;
         serviceOptionsDiv.innerHTML = "";
 
         if (selected === "braiding") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section mb-4">
-      <label class="block font-medium mb-2">Choose Braid Style:</label>
-      <label class="block"><input type="radio" name="braid-style" value="Straight Back"> Straight Back</label>
-      <label class="block"><input type="radio" name="braid-style" value="Knotless"> Knotless</label>
-      <label class="block"><input type="radio" name="braid-style" value="Goddess Braids"> Goddess Braids</label>
-      <label class="block"><input type="radio" name="braid-style" value="Tribal Braids"> Tribal Braids</label>
-      <label class="block"><input type="radio" name="braid-style" value="Lemonade Braids"> Lemonade Braids</label>
-      <label class="block"><input type="radio" name="braid-style" value="Free Hand"> Free Hand</label>
-      <label class="block"><input type="radio" name="braid-style" value="Twist Braids"> Twist Braids</label>
-      <label class="block"><input type="radio" name="braid-style" value="Straight Up"> Straight Up</label>
-      <label class="block"><input type="radio" name="braid-style" value="Straight Side"> Straight Side</label>
-    </div>
-
-    <div class="form-section mb-4">
-      <label class="block font-medium mb-2">Which Length would you like?</label>
-      <label class="block"><input type="radio" name="braid-length" value="Short"> Short</label>
-      <label class="block"><input type="radio" name="braid-length" value="Medium"> Medium</label>
-      <label class="block"><input type="radio" name="braid-length" value="Long"> Long</label>
-    </div>
-
-    <div class="form-section mb-4">
-      <label class="block font-medium mb-2">With Curls?</label>
-      <label class="block"><input type="radio" name="braid-curls" value="Yes"> Yes</label>
-      <label class="block"><input type="radio" name="braid-curls" value="No"> No</label>
-    </div>
-
-    <div class="form-section mb-4">
-      <label class="block font-medium mb-2">Which Braid Size would you like?</label>
-      <label class="block"><input type="radio" name="braid-size" value="Small"> Small</label>
-      <label class="block"><input type="radio" name="braid-size" value="Medium"> Medium</label>
-      <label class="block"><input type="radio" name="braid-size" value="Thick"> Thick</label>
-    </div>
-
-    <div class="form-section mb-4">
-      <label class="block font-medium mb-2">What is your Hair Type?</label>
-      <label class="block"><input type="radio" name="hair-type" value="Afro"> Afro</label>
-      <label class="block"><input type="radio" name="hair-type" value="Relaxed"> Relaxed</label>
-    </div>
-  `;
-} else if (selected === "hairwash") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section">
-      <label class="block font-medium mb-2">What is your Hair Type?</label>
-      <label class="block"><input type="radio" name="wash-hair-type" value="Afro"> Afro</label>
-      <label class="block"><input type="radio" name="wash-hair-type" value="Relaxed"> Relaxed</label>
-      <label class="block"><input type="radio" name="wash-hair-type" value="Blow Out"> Blow Out</label>
-    </div>
-  `;
-} else if (selected === "weaveinstallation") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section">
-      <label class="block font-medium mb-2">Do you want it styled?</label>
-      <label class="block"><input type="radio" name="weave-styled" value="Just Installation"> Just Installation</label>
-      <label class="block"><input type="radio" name="weave-styled" value="Styled and styling"> Styled and Styling</label>
-    </div>
-  `;
-} else if (selected === "makeup") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section">
-      <label class="block font-medium mb-2">Choose Makeup Style:</label>
-      <label class="block"><input type="radio" name="makeup-style" value="Natural look"> Natural</label>
-      <label class="block"><input type="radio" name="makeup-style" value="Full Glamour"> Full Glamour</label>
-      <label class="block"><input type="radio" name="makeup-style" value="Bridal Look"> Bridal</label>
-    </div>
-  `;
-} else if (selected === "weavecustomization") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section">
-      <label class="block font-medium mb-2">Weave Customization:</label>
-      <label class="block"><input type="radio" name="weave-custom" value="Only Customizing"> Only Customizing</label>
-      <label class="block"><input type="radio" name="weave-custom" value="Customization and Styling"> Customization with Styling</label>
-    </div>
-  `;
-} else if (selected === "eyelashes") {
-  serviceOptionsDiv.innerHTML = `
-    <div class="form-section">
-      <label class="block font-medium mb-2">Choose Eyelash Style:</label>
-      <label class="block"><input type="radio" name="eyelash-style" value="Natural"> Natural – Light and subtle</label>
-      <label class="block"><input type="radio" name="eyelash-style" value="Volume"> Volume – Full and bold</label>
-      <label class="block"><input type="radio" name="eyelash-style" value="Hybrid"> Hybrid – Mix of natural and volume</label>
-      <label class="block"><input type="radio" name="eyelash-style" value="Wispy"> Wispy – Spiky & fluttery look</label>
-      <label class="block"><input type="radio" name="eyelash-style" value="Cat Eye"> Cat Eye – Flared & winged out</label>
-    </div>
-  `;
-} else {
-  alert("Please choose a valid service");
-}
-
-    
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section mb-4">
+                    <label class="block font-medium mb-2">Choose Braid Style:</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Straight Back"> Straight Back</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Knotless"> Knotless</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Goddess Braids"> Goddess Braids</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Tribal Braids"> Tribal Braids</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Lemonade Braids"> Lemonade Braids</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Free Hand"> Free Hand</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Twist Braids"> Twist Braids</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Straight Up"> Straight Up</label>
+                    <label class="block"><input type="radio" name="braid-style" value="Straight Side"> Straight Side</label>
+                </div>
+                <div class="form-section mb-4">
+                    <label class="block font-medium mb-2">Which Length would you like?</label>
+                    <label class="block"><input type="radio" name="braid-length" value="Short"> Short</label>
+                    <label class="block"><input type="radio" name="braid-length" value="Medium"> Medium</label>
+                    <label class="block"><input type="radio" name="braid-length" value="Long"> Long</label>
+                </div>
+                <div class="form-section mb-4">
+                    <label class="block font-medium mb-2">With Curls?</label>
+                    <label class="block"><input type="radio" name="braid-curls" value="Yes"> Yes</label>
+                    <label class="block"><input type="radio" name="braid-curls" value="No"> No</label>
+                </div>
+                <div class="form-section mb-4">
+                    <label class="block font-medium mb-2">Which Braid Size would you like?</label>
+                    <label class="block"><input type="radio" name="braid-size" value="Small"> Small</label>
+                    <label class="block"><input type="radio" name="braid-size" value="Medium"> Medium</label>
+                    <label class="block"><input type="radio" name="braid-size" value="Thick"> Thick</label>
+                </div>
+                <div class="form-section mb-4">
+                    <label class="block font-medium mb-2">What is your Hair Type?</label>
+                    <label class="block"><input type="radio" name="hair-type" value="Afro"> Afro</label>
+                    <label class="block"><input type="radio" name="hair-type" value="Relaxed"> Relaxed</label>
+                </div>
+            `;
+        } else if (selected === "hairwash") {
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section">
+                    <label class="block font-medium mb-2">What is your Hair Type?</label>
+                    <label class="block"><input type="radio" name="wash-hair-type" value="Afro"> Afro</label>
+                    <label class="block"><input type="radio" name="wash-hair-type" value="Relaxed"> Relaxed</label>
+                    <label class="block"><input type="radio" name="wash-hair-type" value="Blow Out"> Blow Out</label>
+                </div>
+            `;
+        } else if (selected === "weaveinstallation") {
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section">
+                    <label class="block font-medium mb-2">Do you want it styled?</label>
+                    <label class="block"><input type="radio" name="weave-styled" value="Just Installation"> Just Installation</label>
+                    <label class="block"><input type="radio" name="weave-styled" value="Styled and Styling"> Styled and Styling</label>
+                </div>
+            `;
+        } else if (selected === "makeup") {
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section">
+                    <label class="block font-medium mb-2">Choose Makeup Style:</label>
+                    <label class="block"><input type="radio" name="makeup-style" value="Natural look"> Natural</label>
+                    <label class="block"><input type="radio" name="makeup-style" value="Full Glamour"> Full Glamour</label>
+                    <label class="block"><input type="radio" name="makeup-style" value="Bridal Look"> Bridal</label>
+                </div>
+            `;
+        } else if (selected === "weavecustomization") {
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section">
+                    <label class="block font-medium mb-2">Weave Customization:</label>
+                    <label class="block"><input type="radio" name="weave-custom" value="Only Customizing"> Only Customizing</label>
+                    <label class="block"><input type="radio" name="weave-custom" value="Customization and Styling"> Customization with Styling</label>
+                </div>
+            `;
+        } else if (selected === "eyelashes") {
+            serviceOptionsDiv.innerHTML = `
+                <div class="form-section">
+                    <label class="block font-medium mb-2">Choose Eyelash Style:</label>
+                    <label class="block"><input type="radio" name="eyelash-style" value="Natural"> Natural – Light and subtle</label>
+                    <label class="block"><input type="radio" name="eyelash-style" value="Volume"> Volume – Full and bold</label>
+                    <label class="block"><input type="radio" name="eyelash-style" value="Hybrid"> Hybrid – Mix of natural and volume</label>
+                    <label class="block"><input type="radio" name="eyelash-style" value="Wispy"> Wispy – Spiky & fluttery look</label>
+                    <label class="block"><input type="radio" name="eyelash-style" value="Cat Eye"> Cat Eye – Flared & winged out</label>
+                </div>
+            `;
+        }
     });
 });
